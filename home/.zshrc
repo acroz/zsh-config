@@ -74,6 +74,10 @@ export PYENV_ROOT=$HOME/.config/pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+if [ `uname` = 'Darwin' ]; then
+    # Ensure framework builds for GUI toolkit support on Mac
+    export PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang"
+fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
