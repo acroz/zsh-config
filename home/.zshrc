@@ -12,7 +12,20 @@ setopt extended_history
 setopt hist_ignore_dups
 
 export ZPLUG_HOME=$HOME/.config/zplug
-source $ZPLUG_HOME/init.zsh
+ZPLUG_INIT=$ZPLUG_HOME/init.zsh
+
+if [[ ! -a $ZPLUG_INIT ]]; then
+    read -q INSTALL\?"Install zplug? [y/N] "
+    case $INSTALL in
+        y|Y)
+            curl -sL --proto-redir -all,https \
+                https://raw.githubusercontent.com/zplug/installer/master/installer.zsh \
+                | zsh
+            ;;
+    esac
+fi
+
+source $ZPLUG_INIT
 
 # Styling
 zplug "chriskempson/base16-shell", use:"scripts/base16-monokai.sh"
