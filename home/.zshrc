@@ -11,6 +11,9 @@ setopt share_history
 setopt extended_history
 setopt hist_ignore_dups
 
+# Colouring
+export CLICOLOR=1
+
 export ZPLUG_HOME=$HOME/.config/zplug
 ZPLUG_INIT=$ZPLUG_HOME/init.zsh
 
