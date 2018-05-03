@@ -48,7 +48,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3
 
 # Extra commands
-zplug "ahmetb/kubectx", as:command, use:"kube{ctx,ens}"
+zplug "ahmetb/kubectx", as:command, use:"kube{ctx,ns}"
 # zplug "ahmetb/kubectx", use:"completion"
 
 export NVM_LAZY_LOAD=true
