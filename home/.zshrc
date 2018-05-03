@@ -70,6 +70,7 @@ bindkey -e
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# Configure pyenv
 export PYENV_ROOT=$HOME/.config/pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
@@ -79,5 +80,8 @@ if [ `uname` = 'Darwin' ]; then
     export PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang"
 fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+if [[ -a "$HOME/.zsh-secrets" ]]; then
+    source "$HOME/.zsh-secrets"
+fi
+
 export PATH="$PATH:$HOME/.rvm/bin"
