@@ -67,8 +67,11 @@ zplug load
 # Enable readline/emacs shortcuts
 bindkey -e
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey "${terminfo[khome]}" beginning-of-line # Home
+bindkey "${terminfo[kend]}"  end-of-line # End
+bindkey "${terminfo[kdch1]}" delete-char # Del
+bindkey '^[[A' history-substring-search-up # Arrow Up
+bindkey '^[[B' history-substring-search-down # Arrow Down
 
 # Configure pyenv
 export PYENV_ROOT=$HOME/.config/pyenv
