@@ -87,4 +87,5 @@ if [[ -a "$HOME/.zsh-secrets" ]]; then
     source "$HOME/.zsh-secrets"
 fi
 
+# Ruby Version Manager
 export PATH="$PATH:$HOME/.rvm/bin"
